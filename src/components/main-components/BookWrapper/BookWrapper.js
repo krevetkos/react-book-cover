@@ -3,12 +3,23 @@ import './BookWrapper.css';
 import SizeManager from './../../../servicess/SizeService';
 
 export default class BookWrapper extends React.Component {
-    // SizeManager.OneStyle.subscribe(e=> {
-    //     console.log();
-        
-    //     })
+    sideOneStyle;
+    sideTwoStyle;
+    sideThreeStyle;
+    sideFourStyle;
+    sideFiveStyle;
+    sideSixStyle;
+
     componentDidMount(){
-        SizeManager.OneStyle.subscribe(e=>console.log(e))
+        SizeManager.OneStyle.subscribe(e=>{
+            this.sideOneStyle = SizeManager.setStyleSideOne(e)
+            this.sideTwoStyle = SizeManager.setStyleSideTwo(e)
+            this.sideFourStyle = SizeManager.setStyleSideFour(e)
+            this.sideFiveStyle = SizeManager.setStyleSideFive(e)
+            this.sideSixStyle = SizeManager.setStyleSideSix(e)
+
+            console.log(this.sideOneStyle, this.sideTwoStyle, this.sideThreeStyle, this.sideFourStyle, this.sideFiveStyle, this.sideSixStyle)
+        })
     }
     render() {
         return (
