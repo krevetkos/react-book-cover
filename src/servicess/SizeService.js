@@ -1,19 +1,20 @@
 import { BehaviorSubject } from 'rxjs';
+import Constants from './../constants';
 
 const sizeCollection = {
-    x:0,
-    y:0,
-    z:0
+  x: Constants.DEFAULT_BOOK_HEIGHT,
+  y: Constants.DEFAULT_BOOK_WIDTH,
+  z: Constants.DEFAULT_BOOK_DEPTH,
 }
 
 
 let OneStyle = new BehaviorSubject(sizeCollection);
-let sideOneStyle = OneStyle.asObservable();
+OneStyle.asObservable();
 function nextMessage(data) {
   OneStyle.next(data)
 }
 function findCoefficient(x,y){
-  return y/x
+  return Number(y)/Number(x)
 }
 function changeSide(){
   nextMessage(sizeCollection)
@@ -21,14 +22,15 @@ function changeSide(){
 }
 // bookSize(style){
 //   let  element = {
-//     height:`${300}px`,
-//     width: `${300 * findCoefficient(style.x, style.y)}px`,
+//     height:`${Constants.DEFAULT_BOOK_HEIGHT}px`,
+//     width: `${Constants.DEFAULT_BOOK_HEIGHT * findCoefficient(style.x, style.y)}px`,
 //   }
 //   return element
 // }
 function setStyleSideOne(style){
+  console.log(findCoefficient(style.x, style.y))
   let  element = {
-    width: `${300 * findCoefficient(style.x, style.y)}px`,
+    width: `${Constants.DEFAULT_BOOK_HEIGHT * findCoefficient(style.x, style.y)}px`,
     transform: `translate3d(${style.z/2}px, 0px, ${style.z/2}px)`
   }
   return element
@@ -36,39 +38,40 @@ function setStyleSideOne(style){
 function setStyleSideTwo(style){
   let  element = {
     "margin-top": "-50%",
-    height:`${300 * findCoefficient(style.x, style.y)}px`,
+    height:`${Constants.DEFAULT_BOOK_HEIGHT * findCoefficient(style.x, style.y)}px`,
     width: `${style.z}px`,
-    transform: `rotateY(90deg) rotateX(90deg) translate3d(0px, ${300 * findCoefficient(style.x, style.y)/2}px, 0px)`
+    transform: `rotateY(90deg) rotateX(90deg) translate3d(0px, ${Constants.DEFAULT_BOOK_HEIGHT * findCoefficient(style.x, style.y)/2}px, 0px)`
   }
   return element
 }
 function setStyleSideThree(style, top){
-  let marg = 300 + top
+  let marg = Constants.DEFAULT_BOOK_HEIGHT + top
+  console.log(top)
   let  element = {
-    height:`${300 * findCoefficient(style.x, style.y)}px`,
+    height:`${Constants.DEFAULT_BOOK_HEIGHT * findCoefficient(style.x, style.y)}px`,
     width: `${style.z}px`,
-    transform: `rotateY(90deg) rotateX(90deg) translate3d(0px, ${300 * findCoefficient(style.x, style.y)/2}px, -${marg}px)`
+    transform: `rotateY(90deg) rotateX(90deg) translate3d(0px, ${Constants.DEFAULT_BOOK_HEIGHT * findCoefficient(style.x, style.y)/2}px, -${marg}px)`
   }
   return element
 }
 function setStyleSideFour(style){
   let  element = {
-    height:`${300}px`,
+    height:`${Constants.DEFAULT_BOOK_HEIGHT}px`,
     width: `${style.z}px`,
-    transform: `rotateY(90deg) translate3d(0px, 0px, ${300 * findCoefficient(style.x, style.y)}px)`
+    transform: `rotateY(90deg) translate3d(0px, 0px, ${Constants.DEFAULT_BOOK_HEIGHT * findCoefficient(style.x, style.y)}px)`
   }
   return element
 }
 function setStyleSideFive(style){
   let  element = {
-    height: `${300}px`,
+    height: `${Constants.DEFAULT_BOOK_HEIGHT}px`,
     width: `${style.z}px`,
   }
   return element
 }
 function setStyleSideSix(style){
   let  element = {
-    width: `${300 * findCoefficient(style.x, style.y)}px`,
+    width: `${Constants.DEFAULT_BOOK_HEIGHT * findCoefficient(style.x, style.y)}px`,
     transform: `rotateY(180deg) translate3d(-${style.z/2}px, 0px, ${style.z/2}px)`
   }
   return element
