@@ -3,10 +3,6 @@ import './SizeController.css';
 import SizeManager from './../../../../servicess/SizeService';
 export default class SizeController extends React.Component{
 
-    constructor(props){
-        super(props)
-    }
-
     manageSize(event){
         SizeManager.sizeCollection.x = Number(event.target.value)
         SizeManager.changeSide()

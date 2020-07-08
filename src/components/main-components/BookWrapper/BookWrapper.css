@@ -38,7 +38,7 @@
     height: 300px;
     width: 300px;
     background-color: rgb(181, 43, 43);
-    transform: rotateY(90deg) rotateX(90deg) translate3d(0px, 150px, 0px);
+    transform: rotateY(90deg) rotateX(90deg) translate3d(0px, 150px, 150px);
 }
 #side3 {
     height: 300px;

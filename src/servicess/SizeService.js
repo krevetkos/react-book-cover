@@ -20,15 +20,14 @@ function changeSide(){
   nextMessage(sizeCollection)
   return OneStyle
 }
-// bookSize(style){
-//   let  element = {
-//     height:`${Constants.DEFAULT_BOOK_HEIGHT}px`,
-//     width: `${Constants.DEFAULT_BOOK_HEIGHT * findCoefficient(style.x, style.y)}px`,
-//   }
-//   return element
-// }
+function bookSize(style){
+  let  element = {
+    height:`${Constants.DEFAULT_BOOK_HEIGHT}px`,
+    width: `${Constants.DEFAULT_BOOK_HEIGHT * findCoefficient(style.x, style.y)}px`,
+  }
+  return element
+}
 function setStyleSideOne(style){
-  console.log(findCoefficient(style.x, style.y))
   let  element = {
     width: `${Constants.DEFAULT_BOOK_HEIGHT * findCoefficient(style.x, style.y)}px`,
     transform: `translate3d(${style.z/2}px, 0px, ${style.z/2}px)`
@@ -46,7 +45,6 @@ function setStyleSideTwo(style){
 }
 function setStyleSideThree(style, top){
   let marg = Constants.DEFAULT_BOOK_HEIGHT + top
-  console.log(top)
   let  element = {
     height:`${Constants.DEFAULT_BOOK_HEIGHT * findCoefficient(style.x, style.y)}px`,
     width: `${style.z}px`,
