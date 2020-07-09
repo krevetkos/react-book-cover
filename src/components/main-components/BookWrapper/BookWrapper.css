@@ -29,39 +29,20 @@
     left: -150px;
 }
 #side1 {
-    height: 300px;
-    width: 300px;
     background-color: rgb(128, 128, 128);
-    transform: translate3d(150px, 0px, 150px);
 }
 #side2 {
-    height: 300px;
-    width: 300px;
     background-color: rgb(181, 43, 43);
-    transform: rotateY(90deg) rotateX(90deg) translate3d(0px, 150px, 150px);
 }
 #side3 {
-    height: 300px;
-    width: 300px;
-    transform: rotateY(90deg) rotateX(90deg) translate3d(0px, 150px, -150px);
     background-color: rgb(140, 216, 53);
 }
 #side4 {
-    bottom: 0;
-    height: 300px;
-    width: 300px;
     background-color: green;
-    transform: rotateY(90deg) translate3d(0px, 0px, 300px);
 }
 #side5 {
-    height: 300px;
-    width: 300px;
-    background-color: rgb(128, 128, 128);
-    transform: rotateY(-90deg) translate3d(0px, 0px, 0px);
+    background-color: pink;
 }
 #side6 {
-    height: 300px;
-    width: 300px;
     background-color: rgb(128, 128, 128);
-    transform: rotateY(180deg) translate3d(-150px, 0px, 150px);
 }
